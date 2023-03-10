@@ -1,3 +1,5 @@
+package integration;
+
 import java.util.Scanner;
 
 public class InputRepository {
@@ -50,11 +52,19 @@ public class InputRepository {
 
 
     private static boolean isNotBlank(String carNames) {
-        return !carNames.isBlank();
+        if (!carNames.isBlank()) {
+            System.out.println("carNames = " + carNames);
+            return true;
+        }
+        return false;
     }
 
     private static boolean isNotEmpty(String carNames) {
-        return !carNames.isEmpty();
+        if (!carNames.isEmpty()) {
+            System.out.println("carNames = " + carNames);
+            return true;
+        }
+        return false;
     }
 
     private static void printReInputMsg() {

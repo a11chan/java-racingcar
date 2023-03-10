@@ -1,6 +1,9 @@
+package integration;
+
 import java.util.ArrayList;
 
-public class RacingGame {
+//System.in, System.Out 테스트 방법 숙지 후 진행
+public class RacingGameTest {
 
     private static final InputRepository inputRepo = new InputRepository();
     private static final Interpreter interpreter = new Interpreter();
