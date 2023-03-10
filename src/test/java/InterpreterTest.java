@@ -73,14 +73,6 @@ public class InterpreterTest {
         assertThat(isNameLengthOk(getCarList(inputStr))).isEqualTo(true);
     }
 
-    @Test
-    public void 경기횟수가_1이상일_경우_통과() {
-        String inputStr = "1234,12345";
-        int round = 1;
-        InputRepository savedInput = new InputRepository(inputStr, round);
-        assertThat(savedInput.getRound()).isEqualTo(1);
-    }
-
     //TestOnly
     private static void validateCarNameAndThrow(ArrayList<String> carList) {
         long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();

@@ -4,10 +4,10 @@ public class RacingGame {
     public static void main(String[] args) {
         InputRepository inputRepo = new InputRepository();
         inputRepo.saveCarNames();
-        inputRepo.saveRoundCount();
+        inputRepo.saveTotalCount();
 
         String carNames = inputRepo.getCarNames();
-        int roundCount = inputRepo.getRoundCount();
+        int totalCount = inputRepo.getTotalCount();
 
         Interpreter interpreter = new Interpreter();
         ArrayList<String> carList = interpreter.getCarList(carNames);
@@ -21,7 +21,7 @@ public class RacingGame {
         System.out.println(carList);
         System.out.println();
         System.out.println("경기에서 진행될 round 수입니다.");
-        System.out.println(roundCount);
+        System.out.println(totalCount);
         System.out.println();
     }
 }

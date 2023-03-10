@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class InputRepository {
     private String carNames;
-    private int roundCount;
+    private int totalRound;
 
     public void saveCarNames() {
         printWelcomeMssage();
@@ -25,26 +25,26 @@ public class InputRepository {
         return carNames;
     }
 
-    public int getRoundCount() {
-        return roundCount;
+    public int getTotalCount() {
+        return totalRound;
     }
 
-    public void saveRoundCount() {
+    public void saveTotalCount() {
         System.out.println("경기할 횟수를 입력해주세요.");
         System.out.println("(1 이상의 정수)");
         Scanner inputScanner = new Scanner(System.in);
 
         if (inputScanner.hasNextInt()) {
-            roundCount = inputScanner.nextInt();
+            totalRound = inputScanner.nextInt();
         } else {
             System.out.println("[ERROR] 1이상의 정수로 입력해주세요.");
-            saveRoundCount();
+            saveTotalCount();
         }
-        while (roundCount <= 0) {
+        while (totalRound <= 0) {
             System.out.println("[ERROR] 1이상의 정수로 입력해주세요.");
             System.out.print(">>>");
-            roundCount = inputScanner.nextInt();
-            if (1 <= roundCount) break;
+            totalRound = inputScanner.nextInt();
+            if (1 <= totalRound) break;
         }
     }
 
