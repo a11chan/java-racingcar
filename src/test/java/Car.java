@@ -3,6 +3,10 @@ public class Car {
     private final String name;
     private int position;
 
+    public void printResult() {
+        System.out.println(name + " : " + "-".repeat(position) + " " + position);
+    }
+
     public String getName() {
         return name;
     }
