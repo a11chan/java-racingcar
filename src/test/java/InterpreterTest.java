@@ -1,6 +1,3 @@
-package interpreter;
-
-import inputConsole.InputRepository;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -63,7 +60,7 @@ public class InterpreterTest {
     }
 
     @Test
-    public void 자동차이름이_6글자인_경우_재입력안내() {
+    public void 자동차이름이_6글자인_경우_재입력() {
         //입력 저장소에서 입력값 불러오기
         String inputStr = "123456,12345";
         assertThat(isNameLengthOk(getCarList(inputStr))).isEqualTo(false);
@@ -101,7 +98,7 @@ public class InterpreterTest {
 
     private static boolean isNameLengthOk(ArrayList<String> carList) {
         long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();
-        if (longNameCount != 0) {
+        if (longNameCount >= 1) {
             System.out.println("[ERROR] 자동차 이름은 5글자 이하로 만들어주세요.");
             System.out.println("입력콘솔에서 입력기 호출");
             return false;

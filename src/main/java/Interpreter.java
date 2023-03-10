@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 public class Interpreter {
     public boolean isNameLengthOk(ArrayList<String> carList) {
         long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();
-        if (longNameCount != 0) {
+        if (longNameCount >= 1) {
             System.out.println("[ERROR] 자동차 이름은 5글자 이하로 만들어주세요.");
             return false;
         }

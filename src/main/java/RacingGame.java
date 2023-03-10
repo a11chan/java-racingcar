@@ -11,6 +11,11 @@ public class RacingGame {
 
         Interpreter interpreter = new Interpreter();
         ArrayList<String> carList = interpreter.getCarList(carNames);
+        while(!interpreter.isNameLengthOk(carList)) {
+            inputRepo.saveCarNames();
+            carNames = inputRepo.getCarNames();
+            carList = interpreter.getCarList(carNames);
+        }
 
         System.out.println("경기에 참가할 자동차입니다.");
         System.out.println(carList);

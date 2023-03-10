@@ -1,5 +1,3 @@
-package inputConsole;
-
 public class InputRepository {
     private final String name;
     private final int round;
@@ -8,11 +6,6 @@ public class InputRepository {
         this.name = name;
         this.round = round;
     }
-
-    public String getName() {
-        return name;
-    }
-
 
     public int getRound() {
         return round;

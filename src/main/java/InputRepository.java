@@ -71,7 +71,7 @@ public class InputRepository {
     }
 
     private static void printWelcomeMssage() {
-        System.out.println("자동차 경기를 시작합니다.");
+        System.out.println();
         System.out.println("경기에 참가할 자동차 이름을 입력해주세요.");
         System.out.println("자동차 이름은 5글자 이하, 쉽표(,)로 구분합니다.");
         System.out.print(">>>");
