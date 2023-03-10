@@ -65,7 +65,6 @@ public class InterpreterTest {
         assertThatThrownBy(() -> validateCarNameAndThrow(getCarList(inputStr)))
             .isInstanceOf(IllegalArgumentException.class);
 
-        // To do : 박재성 님 강의 코드 컨벤션 확인
     }
 
     @Test
