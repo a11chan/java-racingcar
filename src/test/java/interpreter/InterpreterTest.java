@@ -49,19 +49,14 @@ public class InterpreterTest {
 
     @Test
     public void 자동차이름이_6글자인_경우_확인() {
-        String inputStr = "123456,12345";
-
-        ArrayList<String> carList = getCarList(inputStr);
-
-        Long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();
-        assertThat(longNameCount).isEqualTo(1);
+        isLongName("123456,12345");
+        assertThat(isLongName("123456,12345")).isTrue();
     }
 
     @Test
     public void 자동차이름이_6글자인_경우_예외_던짐() {
         //입력 저장소에서 입력값 불러오기
         String inputStr = "123456,12345";
-
         assertThatThrownBy(() -> validateCarNameAndThrow(getCarList(inputStr)))
             .isInstanceOf(IllegalArgumentException.class);
 
@@ -89,29 +84,34 @@ public class InterpreterTest {
         assertThat(savedInput.getRound()).isEqualTo(1);
     }
 
+    //TestOnly
+    private static void validateCarNameAndThrow(ArrayList<String> carList) {
+        long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();
+        if (longNameCount != 0) {
+            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5글자 이하로 만들어주세요.");
+        }
+        //이후 입력콘솔에서 입력기 호출
+    }
+    //TestOnly
+    public boolean isLongName (String carNames) {
+        ArrayList<String> carList = getCarList(carNames);
+        long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();
+        return longNameCount >= 1;
+    }
+
     private static boolean isNameLengthOk(ArrayList<String> carList) {
         long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();
-        if(longNameCount != 0) {
+        if (longNameCount != 0) {
             System.out.println("[ERROR] 자동차 이름은 5글자 이하로 만들어주세요.");
             System.out.println("입력콘솔에서 입력기 호출");
             return false;
         }
         return true;
     }
-
     private static ArrayList<String> getCarList(String inputStr) {
         String[] dividedCar = inputStr.split(",");
         return Stream.of(dividedCar)
             .map(String::trim)
             .collect(Collectors.toCollection(ArrayList::new));
-    }
-
-    //미사용, 참고용
-    private static void validateCarNameAndThrow(ArrayList<String> carList) {
-        long longNameCount = carList.stream().filter(s -> s.length() >= 6).count();
-        if(longNameCount != 0) {
-            throw new IllegalArgumentException("[ERROR] 자동차 이름은 5글자 이하로 만들어주세요.");
-        }
-        //이후 입력콘솔에서 입력기 호출
     }
 }
