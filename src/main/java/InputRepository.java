@@ -43,7 +43,12 @@ public class InputRepository {
         while (totalRound <= 0) {
             System.out.println("[ERROR] 1이상의 정수로 입력해주세요.");
             System.out.print(">>>");
-            totalRound = inputScanner.nextInt();
+            if(!inputScanner.hasNextInt()) {
+                System.out.println("[ERROR] 1이상의 정수로 입력해주세요.");
+                saveTotalRound();
+            } else {
+                totalRound = inputScanner.nextInt();
+            }
             if (1 <= totalRound) break;
         }
     }
