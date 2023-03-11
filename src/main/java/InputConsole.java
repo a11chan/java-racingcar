@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class InputRepository {
+public class InputConsole {
     private String carNames;
     private int totalRound;
 

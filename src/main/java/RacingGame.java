@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class RacingGame {
 
-    private static final InputRepository inputRepo = new InputRepository();
+    private static final InputConsole inputRepo = new InputConsole();
     private static final Interpreter interpreter = new Interpreter();
     private static final CarController controller = new CarController();
 
