@@ -30,6 +30,6 @@ public class RacingGame {
 
         ArrayList<Car> raceResult = controller.startRound(carList, totalRound);
         String winner = controller.getWinner(raceResult);
-        System.out.println("최종 우승자는 " + winner + " 입니다.");
+        System.out.println("최종 우승자는 " + winner + "입니다.");
     }
 }
