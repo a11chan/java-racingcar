@@ -19,12 +19,10 @@ public class CarControllerTest {
 
     @DisplayName("자동차 5대 생성 검증")
     @Test
-
     public void makeCarContainer() {
         String carNames = "  1 2 a 4 5  ,  12   34,1 2 3,1 2,   1";
         ArrayList<Car> carContainer = controller.getCarContainer(carNames);
         assertThat((long) carContainer.size()).isEqualTo(5);
-        carContainer.forEach(car -> System.out.println(car.getName()));
     }
 
     @DisplayName("1라운드 진행 시 자동차 1대 위치 계산")

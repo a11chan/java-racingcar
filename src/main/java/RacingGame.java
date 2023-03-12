@@ -2,21 +2,19 @@ import java.util.ArrayList;
 
 public class RacingGame {
 
-    private static final InputConsole inputRepo = new InputConsole();
-    private static final Interpreter interpreter = new Interpreter();
-    private static final CarController controller = new CarController();
-
     public static void main(String[] args) {
-        inputRepo.saveCarNames();
-        inputRepo.saveTotalRound();
+        InputConsole inputRepository = new InputConsole();
+        inputRepository.saveCarNames();
+        inputRepository.saveTotalRound();
 
-        String carNames = inputRepo.getCarNames();
-        int totalRound = inputRepo.getTotalRound();
+        String carNames = inputRepository.getCarNames();
+        int totalRound = inputRepository.getTotalRound();
 
+        Interpreter interpreter = new Interpreter();
         ArrayList<String> carList = interpreter.getCarList(carNames);
         while(!interpreter.isNameLengthOk(carList)) {
-            inputRepo.saveCarNames();
-            carNames = inputRepo.getCarNames();
+            inputRepository.saveCarNames();
+            carNames = inputRepository.getCarNames();
             carList = interpreter.getCarList(carNames);
         }
 
@@ -28,6 +26,7 @@ public class RacingGame {
         System.out.println(totalRound);
         System.out.println();
 
+        CarController controller = new CarController();
         ArrayList<Car> raceResult = controller.startRound(carList, totalRound);
         String winner = controller.getWinner(raceResult);
         System.out.println("최종 우승자는 " + winner + "입니다.");

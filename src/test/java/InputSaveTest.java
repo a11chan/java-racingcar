@@ -33,6 +33,7 @@ public class InputSaveTest {
         return Integer.parseInt(roundScanner.nextLine());
     }
 
+    // todo: 어떤 걸 테스트하는지 불분명, 분리하든지 이름을 명확히 할 것
     @DisplayName("자동차 이름: asdf1, 경기 횟수는 1로 가정")
     @Test
     public void 자동차_입력값_저장() {

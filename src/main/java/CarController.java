@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class CarController {
+    // todo: List가 나은지 ArrayListe가 나은지 알아볼 것
     public ArrayList<Car> startRound(ArrayList<String> carList, int totalRound) {
         ArrayList<Car> carContainer = getCarContainer(carList);
         for (int round = 0; round < totalRound; round++) {
@@ -17,6 +18,7 @@ public class CarController {
             .collect(Collectors.toCollection(ArrayList::new));
     }
 
+    //todo: controller에 있는 게 자연스러운지 확인
     public String getWinner(ArrayList<Car> carContainer) {
         int max = carContainer.stream().mapToInt(Car::getPosition).max().getAsInt();
         return carContainer.stream()

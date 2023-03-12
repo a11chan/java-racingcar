@@ -27,7 +27,7 @@ public class InterpreterTest {
         assertThat(dividedCar[2]).isEqualTo(" zx cv3 ");
     }
 
-
+    // todo: 아래 완성된 코드 참조하는 테스트 코드 수정, 프로덕션 영역을 참조하도록
     @Test
     public void 입력값을_trim후_스트림으로_변환() {
         String inputStr = " as df1 , qw er2 ";
