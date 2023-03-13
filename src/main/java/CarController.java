@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class CarController {
-    // todo: List가 나은지 ArrayListe가 나은지 알아볼 것
+    // todo: List가 나은지 ArrayList가 나은지 알아볼 것
     public ArrayList<Car> startRound(ArrayList<String> carList, int totalRound) {
         ArrayList<Car> carContainer = getCarContainer(carList);
         for (int round = 0; round < totalRound; round++) {

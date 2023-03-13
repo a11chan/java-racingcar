@@ -26,6 +26,7 @@ public class Car {
         this.position = 0;
     }
 
+    //todo: 10, 3이 의미하는 바를 모를 수 있으니 final 문자로 표현 필
     public void moveCar() {
         raceCount++;
         if ((int) (Math.random() * 10) > 3) {

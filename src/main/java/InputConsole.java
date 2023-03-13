@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+// todo: 예외 클래스 사용할 것, validation 클래스 추가 필
 public class InputConsole {
     private String carNames;
     private int totalRound;
